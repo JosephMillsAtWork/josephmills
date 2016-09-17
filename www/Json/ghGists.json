@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://api.github.com/gists/f94577c6c2294ddd4c36b03967e2c4b2",
+    "forks_url": "https://api.github.com/gists/f94577c6c2294ddd4c36b03967e2c4b2/forks",
+    "commits_url": "https://api.github.com/gists/f94577c6c2294ddd4c36b03967e2c4b2/commits",
+    "id": "f94577c6c2294ddd4c36b03967e2c4b2",
+    "git_pull_url": "https://gist.github.com/f94577c6c2294ddd4c36b03967e2c4b2.git",
+    "git_push_url": "https://gist.github.com/f94577c6c2294ddd4c36b03967e2c4b2.git",
+    "html_url": "https://gist.github.com/f94577c6c2294ddd4c36b03967e2c4b2",
+    "files": {
+      "build-protobuf-2.6.1.sh": {
+        "filename": "build-protobuf-2.6.1.sh",
+        "type": "application/x-sh",
+        "language": "Shell",
+        "raw_url": "https://gist.githubusercontent.com/JosephMillsAtWork/f94577c6c2294ddd4c36b03967e2c4b2/raw/f3baa89c9aa7ff3300d4453b847fc3d786d02ba8/build-protobuf-2.6.1.sh",
+        "size": 7062
+      }
+    },
+    "public": true,
+    "created_at": "2016-05-12T23:37:28Z",
+    "updated_at": "2016-05-12T23:37:28Z",
+    "description": "",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/f94577c6c2294ddd4c36b03967e2c4b2/comments",
+    "owner": {
+      "login": "JosephMillsAtWork",
+      "id": 8931995,
+      "avatar_url": "https://avatars.githubusercontent.com/u/8931995?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/JosephMillsAtWork",
+      "html_url": "https://github.com/JosephMillsAtWork",
+      "followers_url": "https://api.github.com/users/JosephMillsAtWork/followers",
+      "following_url": "https://api.github.com/users/JosephMillsAtWork/following{/other_user}",
+      "gists_url": "https://api.github.com/users/JosephMillsAtWork/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/JosephMillsAtWork/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/JosephMillsAtWork/subscriptions",
+      "organizations_url": "https://api.github.com/users/JosephMillsAtWork/orgs",
+      "repos_url": "https://api.github.com/users/JosephMillsAtWork/repos",
+      "events_url": "https://api.github.com/users/JosephMillsAtWork/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/JosephMillsAtWork/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  },
+  {
+    "url": "https://api.github.com/gists/ac53482057618ee75c88e574e25d2573",
+    "forks_url": "https://api.github.com/gists/ac53482057618ee75c88e574e25d2573/forks",
+    "commits_url": "https://api.github.com/gists/ac53482057618ee75c88e574e25d2573/commits",
+    "id": "ac53482057618ee75c88e574e25d2573",
+    "git_pull_url": "https://gist.github.com/ac53482057618ee75c88e574e25d2573.git",
+    "git_push_url": "https://gist.github.com/ac53482057618ee75c88e574e25d2573.git",
+    "html_url": "https://gist.github.com/ac53482057618ee75c88e574e25d2573",
+    "files": {
+      "android_configure.sh": {
+        "filename": "android_configure.sh",
+        "type": "application/x-sh",
+        "language": "Shell",
+        "raw_url": "https://gist.githubusercontent.com/JosephMillsAtWork/ac53482057618ee75c88e574e25d2573/raw/0024b5e2c2d478fceff13b09a5c4247e9f6029ac/android_configure.sh",
+        "size": 1694
+      }
+    },
+    "public": true,
+    "created_at": "2016-05-11T05:42:33Z",
+    "updated_at": "2016-05-11T05:42:35Z",
+    "description": "Cross-compile autotools library for Android / arm-linux-androideabi\r\n\r\nI stick that in ~/bin/, chmod +x, and then run it in place of \"./configure\" in my project. Then a make and make install later, the prefix contains libraries built for android. Neato eh?",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/ac53482057618ee75c88e574e25d2573/comments",
+    "owner": {
+      "login": "JosephMillsAtWork",
+      "id": 8931995,
+      "avatar_url": "https://avatars.githubusercontent.com/u/8931995?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/JosephMillsAtWork",
+      "html_url": "https://github.com/JosephMillsAtWork",
+      "followers_url": "https://api.github.com/users/JosephMillsAtWork/followers",
+      "following_url": "https://api.github.com/users/JosephMillsAtWork/following{/other_user}",
+      "gists_url": "https://api.github.com/users/JosephMillsAtWork/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/JosephMillsAtWork/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/JosephMillsAtWork/subscriptions",
+      "organizations_url": "https://api.github.com/users/JosephMillsAtWork/orgs",
+      "repos_url": "https://api.github.com/users/JosephMillsAtWork/repos",
+      "events_url": "https://api.github.com/users/JosephMillsAtWork/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/JosephMillsAtWork/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  }
+] 
