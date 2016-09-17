@@ -79,7 +79,7 @@ function parseBranches(d){
     $("#lpBranches").append("\
         <div class='col-sm-6 col-md-4'>\
           <div class='thumbnail card' style='min-height:450px'>\
-            <img src='/artwork/programming/makefile.png'></img>\
+            <img src='/josephmills/artwork/programming/makefile.png'></img>\
             <div class='caption'>\
               <h3>"+cutName( d[i].Name )+"</h3>\
               <hr></hr>\
