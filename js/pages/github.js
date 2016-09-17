@@ -47,7 +47,7 @@ function parseLevelOne(d){
 
 function getLevelOne(){
   $.ajax({
-    url: "http://localhost:3000/Json/ghHome.json",
+    url: "https://josephmillsatwork.github.io/josephmills/Json/ghHome.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)
@@ -81,7 +81,7 @@ console.log(d)
 }
 function getGists(){
   $.ajax({
-    url: "http://localhost:3000/Json/ghGists.json",
+    url: "https://josephmillsatwork.github.io/josephmills/Json/ghGists.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)
@@ -93,7 +93,7 @@ function getGists(){
 function getProgramingIcon(lang){
 
   if (lang === null){
-    return "/artwork/programming/makefile.png";
+    return "/josephmills/artwork/programming/makefile.png";
   }else{
     var tL = lang.toString();
     return "/josephmills/artwork/programming/"+tL.toLowerCase()+".png"
@@ -121,7 +121,7 @@ console.log(d.length)
 
 function getRepos(){
   $.ajax({
-    url: "http://localhost:3000/Json/ghRepo.json",
+    url: "https://josephmillsatwork.github.io/josephmills/Json/ghRepo.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)
