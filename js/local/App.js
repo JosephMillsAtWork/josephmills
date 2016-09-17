@@ -140,7 +140,7 @@ function parseMenuCall(menuArray){
 function changePage(pageName)
 {
   var newPage = pageName.toString()
-  $("#page").load( "josephmills/pages/" + newPage.replace(/\s/g, "").toLowerCase() +".html" );
+  $("#page").load( "pages/" + newPage.replace(/\s/g, "").toLowerCase() +".html" );
   $("#pageTitle").text(pageName);
   $("#navDrawer").css("height", $("#mainRow").height() )
   window.location.hash = pageName;
@@ -161,7 +161,7 @@ function loadFooter(){
             <div class='row' id='footer'> \
                 <div id='footerIconHolder' class='col-md-12 hideme'> \
                       <p >Created By Joseph Mills</p> \
-                      <p>All source code for this web site is locaated Here</p> \
+                      <p>All source code for this web site is located <a href='https://github.com/JosephMillsAtWork/josephmills'>Here</a></p> \
                       <p>version 0.1</p> \
                 </div> \
             </div> \

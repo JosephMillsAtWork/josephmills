@@ -96,7 +96,7 @@ function getProgramingIcon(lang){
     return "/artwork/programming/makefile.png";
   }else{
     var tL = lang.toString();
-    return "/artwork/programming/"+tL.toLowerCase()+".png"
+    return "/josephmills/artwork/programming/"+tL.toLowerCase()+".png"
   }
 
 }

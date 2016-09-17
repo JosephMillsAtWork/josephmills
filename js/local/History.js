@@ -59,11 +59,11 @@ var getHash = function()
   {
     var cH = window.location.hash
     var ty =  cH.substring(cH.lastIndexOf("#") +1 )
-//     if (DEFINE_DEBUG)
-//     {
+    if (DEFINE_DEBUG)
+    {
       console.log("has hash " + ty);
-      currentHash = ty;
-//     }
+    }
+    currentHash = ty;
   }
 }
 
@@ -111,7 +111,6 @@ this.refresh = function(hash)
     {
       if (DEFINE_DEBUG){
         console.log("Found it " + cHash );
-
       }
     }
   }
@@ -149,7 +148,6 @@ window.addEventListener("hashchange", function(){
   if (DEFINE_DEBUG)
   {
     console.log("HASH CHANGE");
-
   }
   getHash()
 });
