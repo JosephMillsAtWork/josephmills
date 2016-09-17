@@ -46,7 +46,7 @@ function History()
   this.pages = [];
 
   // protected:
-  var baseUrl = "localhost:3000"
+  var baseUrl = "https://josephmillsatwork.github.io/josephmills/"
   var currentUrl  = "null"
   var currentHash = "null"
 

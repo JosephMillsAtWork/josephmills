@@ -140,7 +140,7 @@ function parseMenuCall(menuArray){
 function changePage(pageName)
 {
   var newPage = pageName.toString()
-  $("#page").load( "/pages/" + newPage.replace(/\s/g, "").toLowerCase() +".html" );
+  $("#page").load( "josephmills/pages/" + newPage.replace(/\s/g, "").toLowerCase() +".html" );
   $("#pageTitle").text(pageName);
   $("#navDrawer").css("height", $("#mainRow").height() )
   window.location.hash = pageName;
