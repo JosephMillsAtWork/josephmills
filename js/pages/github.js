@@ -81,7 +81,7 @@ console.log(d)
 }
 function getGists(){
   $.ajax({
-    url: "Json/ghGists.json",
+    url: "https://josephmillsatwork.github.io/josephmills/Json/ghGists.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)
@@ -93,10 +93,10 @@ function getGists(){
 function getProgramingIcon(lang){
 
   if (lang === null){
-    return "artwork/programming/makefile.png";
+    return "/josephmills/artwork/programming/makefile.png";
   }else{
     var tL = lang.toString();
-    return "artwork/programming/"+tL.toLowerCase()+".png"
+    return "/josephmills/artwork/programming/"+tL.toLowerCase()+".png"
   }
 
 }
