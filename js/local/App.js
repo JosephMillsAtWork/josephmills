@@ -594,7 +594,7 @@ $(document).ready( function(){
     $(this).addClass("active");
 
     changePage( $(this).text() )
-    $(".mobile-close").hide("slide", { direction: "left" }, 600)
+    $(".mobile-close").hide(600)
     $(".mobile-menu").hide(0)
   });
 
