@@ -1,15 +1,3 @@
-
-
-<div class="card" style="margin-top:10px">
-  <h2>&nbsp;Here is a playlist of 42 videos covering QML/Qt/C++ Tutorials</h2>
-  <hr/>
-  <div class="embed-responsive embed-responsive-16by9" style="padding-left:1%;padding-right:1%">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4utTBcSjdM?list=PLB22HyVdO1GkLFrvRi5vIo5XcWS0EflxD" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <br/>
-</div>
-
-
 <!--  _                      _       __  __ _ _ _
      | | ___  ___  ___ _ __ | |__   |  \/  (_| | |___
   _  | |/ _ \/ __|/ _ | '_ \| '_ \  | |\/| | | | / __|
@@ -50,3 +38,21 @@ If you are reading this I am for hire.
 ****************************************************************************/
 
 -->
+
+
+<div class="card" style="margin-top:10px">
+  <h2>&nbsp;Here is a playlist of 42 videos covering QML/Qt/C++ Tutorials</h2>
+  <hr/>
+  <div class="embed-responsive embed-responsive-16by9" style="padding-left:1%;padding-right:1%">
+    <iframe id="ytPlaylist" width="560" height="315" src="https://www.youtube.com/embed/Y4utTBcSjdM?list=PLB22HyVdO1GkLFrvRi5vIo5XcWS0EflxD" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <br/>
+</div>
+
+
+
+<script>
+  $("#ytPlaylist").load(function(){
+    loadedEverything();
+  })
+</script>

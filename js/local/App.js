@@ -44,8 +44,7 @@
 
 
 
-
-
+const version = 0.1;
 
 
 
@@ -56,7 +55,7 @@
   var sectionTwo = [ "Programs","Tutorials" ]
   var sectionThree = ["Github" ,"Launchpad","This Site" ]
 
-
+  var vidLoad = 0;
 
 
 
@@ -69,7 +68,7 @@
                                   );
 
   m_history.setPages(forHistory)
-
+  m_stackView.start(forHistory);
 
 
   const materialColors = [
@@ -140,7 +139,11 @@ function parseMenuCall(menuArray){
 function changePage(pageName)
 {
   var newPage = pageName.toString()
-  $("#page").load( "pages/" + newPage.replace(/\s/g, "").toLowerCase() +".html" );
+
+  m_stackView.changePage(pageName);
+
+
+  //$("#page").load( "pages/" + newPage.replace(/\s/g, "").toLowerCase() +".html" );
   $("#pageTitle").text(pageName);
   $("#navDrawer").css("height", $("#mainRow").height() )
   window.location.hash = pageName;
@@ -162,7 +165,7 @@ function loadFooter(){
                 <div id='footerIconHolder' class='col-md-12 hideme'> \
                       <p >Created By Joseph Mills</p> \
                       <p>All source code for this web site is located <a href='https://github.com/JosephMillsAtWork/josephmills'>Here</a></p> \
-                      <p>version 0.1</p> \
+                      <p>version: "+version+"</p> \
                 </div> \
             </div> \
         </div> \
@@ -182,13 +185,6 @@ function createTabs(){
   for (var i =0;i < sections.length ; i++){
     $( '#sectionTabs' ).append("<li class='tab'> <a class='tabBtn' id='section" + i + "'>" + sections[i]+ "</a></li>");
   }
-  // REAL BAD IMPLAMENT
-  // BUG active not working even after created.
-  // tried adding active to 1st append
-  // tried removing classes and then adding classes
-  // $("#section0").trigger( "click" );
-  // $("#section0").trigger( "click" );
-
 
 }
 
@@ -325,14 +321,35 @@ function setUpMobileMenu()
 
 
 
+//FIXME bad implamentation
+function loadedEverything()
+{
+  var ae = m_history.hashStr();
+  changePage( ae )
+  $("#loadingPage").slideUp("slow");
+//   $("#loadingPage").remove();
+}
+
+
+
+$(document).load( function(){
+  $("#loadingPages").show();
+  if(DEFINE_DEBUG){
+    console.log("loading")
+  }
+});
+
 
 
 
 $(document).ready( function(){
 
 
-
   loadFooter();
+
+
+
+
 
 
 
@@ -407,6 +424,7 @@ $(document).ready( function(){
           {
 
             $(".menuItem"+i+"").addClass( "active" )
+            changePage(cPage)
           }
           else
           {
@@ -437,8 +455,8 @@ $(document).ready( function(){
     setUpMobileMenu();
     // make sure that all the desktop stuff is closed up
     $("#navDrawer").hide(0)
-    $("#page").removeClass("col-xs-9")
-    $("#page").addClass("col-xs-12")
+    $("#pages").removeClass("col-xs-9")
+    $("#pages").addClass("col-xs-12")
     $("#sectionTabs").hide(0)
     $(".mobile-close").hide(0)
     $(".mobile-menu").hide(0)
@@ -446,17 +464,6 @@ $(document).ready( function(){
     changePage(sectionZero[0])
 
   }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -553,17 +560,17 @@ $(document).ready( function(){
       if (menuOpen){
 
         $("#navDrawer").hide(800)
-        $("#page").removeClass("col-xs-9")
-        $("#page").addClass("col-xs-12")
+        $("#pages").removeClass("col-xs-9")
+        $("#pages").addClass("col-xs-12")
 
         menuOpen = false;
       }
       else
       {
-        $("#page").removeClass("col-xs-12")
+        $("#pages").removeClass("col-xs-12")
         $("#navDrawer").show(800);
         $("#navDrawer").addClass("col-xs-3")
-        $("#page").addClass("col-xs-9")
+        $("#pages").addClass("col-xs-9")
         menuOpen = true;
       }
       $("#navDrawer").css("height", $("#mainRow").height() )
@@ -587,8 +594,8 @@ $(document).ready( function(){
     $(this).addClass("active");
 
     changePage( $(this).text() )
-    $(".mobile-close").hide(600)
-    $(".mobile-menu").hide(600)
+    $(".mobile-close").hide("slide", { direction: "left" }, 600)
+    $(".mobile-menu").hide(0)
   });
 
 
@@ -597,9 +604,5 @@ $(document).ready( function(){
     $(".mobile-close").hide(800)
     $(".mobile-menu").hide(800)
   });
-
-
-
-
 
 });

@@ -38,119 +38,89 @@
 */
 
 
-
-function History()
+StackView = function()
 {
-  //public:
-
-  this.pages = [];
-
-  // protected:
-  var baseUrl = "https://josephmillsatwork.github.io/josephmills"
-  var currentUrl  = "null"
-  var currentHash = "null"
-
-  // private:
 
 
-var getHash = function()
+  this.currentPage = "undefined";
+  this.pageTitle = "undefined";
+  this.active = false;
+  this.visable = false;
+
+  var m_currentPageInt = -1;
+  var pageList = [];
+
+var loadIfNotLoaded = function()
 {
-  if( window.location.hash.indexOf("#") !=-1 )
+  if( visible && !active )
   {
-    var cH = window.location.hash
-    var ty =  cH.substring(cH.lastIndexOf("#") +1 )
-    if (DEFINE_DEBUG)
-    {
-      console.log("has hash " + ty);
-    }
-    currentHash = ty;
+    active = true;
   }
 }
 
 
-
-
-
-
-this.setPages = function(arr)
-{
-  if (this.pages.length > 0 ){
-    this.pages.length = 0
-  }
-  this.pages = arr
-}
-
-
-this.setUrl = function()
+/*!
+ * load the array into a stack of jquery loaders
+ */
+var init = function()
 {
 
-    this.setLoader()
-}
-
-this.setLoader = function()
-{
-
-
-}
-
-this.hashStr = function()
-{
-  getHash()
-  return currentHash;
-}
-
-
-
-this.refresh = function(hash)
-{
-
-  var cHash = getHash();
-  for (var i = 0 ; i < this.pages.length ; i++ )
+  for(var i = 0 ; i < pageList.length;i++)
   {
-    if ( this.pages[i] === cHash  )
-    {
-      if (DEFINE_DEBUG){
-        console.log("Found it " + cHash );
-      }
-    }
+    var g = "pages/" + pageList[i].replace(/\s/g, "").toLowerCase() +".html" ;
+
+    $("#pages").append("<div id='page"+i+"' class='col-md-12'></div>")
+    $("#page"+i).load( g );
+    $("#page"+i).hide();
   }
 }
 
 
-
-this.setBaseUrl = function(str)
+var findAt = function(str)
 {
-  baseUrl = str;
+  return pageList.indexOf(str);
 }
 
 
 
-
-this.checkforHash = function()
+this.start = function(pageArrayIn)
 {
-  getHash();
+  pageList = pageArrayIn;
+  init()
 }
 
-this.hasHash = function()
+
+
+this.changePage = function(pageStr)
 {
 
-  if (window.location.hash.length > 0 )
-  {
-    return true;
-  }
-  else
-  {
-    return false
-  }
+  // FIXME make santiy check
+//   if (m_currentPageInt === findAt(pageStr) )
+//   {
+//     return;
+//   }
+
+
+  // hide the current page
+  $("#page"+m_currentPageInt+"").hide()
+
+  // take the string that gets passed in and get its index in the array
+  // then set the private var
+  m_currentPageInt = findAt(pageStr);
+
+  // TODO make different animation maybe in settings
+  $( "#page"+m_currentPageInt +"").show()
+
+  // here is where the emit should go.  what ever emit is in javascript lol
+
+
 }
 
-window.addEventListener("hashchange", function(){
-  if (DEFINE_DEBUG)
-  {
-    console.log("HASH CHANGE");
-  }
-  getHash()
-});
+
+this.done = function()
+{
+
+}
 
 
 }

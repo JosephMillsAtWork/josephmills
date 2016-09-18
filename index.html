@@ -62,14 +62,14 @@ If you are reading this I am for hire.
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="/josephmills/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
 
   <!-- Bootstrap Material Design -->
-  <link rel="stylesheet" type="text/css" href="/josephmills/css/material/bootstrap-material-design.css">
-  <link rel="stylesheet" type="text/css" href="/josephmills/css/material/ripples.min.css">
+  <link rel="stylesheet" type="text/css" href="css/material/bootstrap-material-design.css">
+  <link rel="stylesheet" type="text/css" href="css/material/ripples.min.css">
 
   <!-- LOCAL -->
-  <link rel="stylesheet" type="text/css" href="/josephmills/css/local/app.css">
+  <link rel="stylesheet" type="text/css" href="css/local/app.css">
 
   <!--
   *___________________________________________________________________________________
@@ -78,20 +78,21 @@ If you are reading this I am for hire.
   -->
 
   <!--jquery -->
-  <script src="/josephmills/js/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="js/jquery/jquery.min.js" type="text/javascript"></script>
 
   <!-- Bootstrap -->
-  <script src="/josephmills/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
 
   <!-- material for bootstrap -->
-  <script src="/josephmills/js/material/material.min.js" type="text/javascript"></script>
-  <script src="/josephmills/js/material/ripples.js" type="text/javascript"></script>
+  <script src="js/material/material.min.js" type="text/javascript"></script>
+  <script src="js/material/ripples.js" type="text/javascript"></script>
 
 
 
   <!-- LOCAL -->
-    <script src="/josephmills/js/local/Screen.js" type="text/javascript"></script>
-    <script src="/josephmills/js/local/History.js" type="text/javascript"></script>
+    <script src="js/local/Screen.js" type="text/javascript"></script>
+    <script src="js/local/History.js" type="text/javascript"></script>
+    <script src="js/local/StackView.js" type="text/javascript"></script>
 
   <!-- Google Analytics   -->
   <script>
@@ -118,19 +119,24 @@ If you are reading this I am for hire.
    m_screen.start();
 
    var m_history = new History();
-   m_history.setBaseUrl("https://josephmillsatwork.github.io/josephmills/");
+   m_history.setBaseUrl("https://josephmillsatwork.github.io/josephmills");
    m_history.checkforHash();
+   var m_stackView = new StackView();
 
 
 
 
   var initPage, formFactor;
   formFactor = m_screen.formFactor();
-  initPage = "/josephmills/App.html";
+  initPage = "App.html";
 
   $("#root").load(initPage);
 
+
   </script>
-  <script src="/josephmills/js/local/App.js" type="text/javascript"></script>
+  <script src="js/local/App.js" type="text/javascript"></script>
+
+<div>
+
 
 </html>
