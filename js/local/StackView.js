@@ -67,7 +67,7 @@ var init = function()
 
   for(var i = 0 ; i < pageList.length;i++)
   {
-    var g = "pages/" + pageList[i].replace(/\s/g, "").toLowerCase() +".html" ;
+    var g = "/josephmills/pages/" + pageList[i].replace(/\s/g, "").toLowerCase() +".html" ;
 
     $("#pages").append("<div id='page"+i+"' class='col-md-12'></div>")
     $("#page"+i).load( g );
