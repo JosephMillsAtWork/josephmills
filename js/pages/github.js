@@ -47,7 +47,7 @@ function parseLevelOne(d){
 
 function getLevelOne(){
   $.ajax({
-    url: "Json/ghHome.json",
+    url: "https://josephmillsatwork.github.io/josephmills/Json/ghHome.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)
