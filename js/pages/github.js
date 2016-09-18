@@ -121,7 +121,7 @@ console.log(d.length)
 
 function getRepos(){
   $.ajax({
-    url: "Json/ghRepo.json",
+    url: "https://josephmillsatwork.github.io/josephmills/Json/ghRepo.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)
