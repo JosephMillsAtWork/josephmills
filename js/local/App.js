@@ -38,16 +38,9 @@
 */
 
 
-
-
-
-
-
-
-const version = 0.1;
+const version = 0.2;
 const sections =  [ "About", "Resume", "Videos","Code" ];
 var sectionZero = [ "Joseph Mills"];
-// "Contact"   var sectionOne =  [ "Stay In Touch", "Call Now" ];
 var sectionOne =  [ "Experience", "Qualifications", "Rating of skills" ];
 var sectionTwo = [ "Programs","Tutorials" ]
 var sectionThree = ["Github" ,"Launchpad","This Site" ]
@@ -341,9 +334,6 @@ function setUpMobileMenu()
         }
       }
     }
-
-
-
 }
 
 
@@ -399,10 +389,7 @@ $(document).load( function(){
 
 
 $(document).ready( function(){
-
-
   loadFooter();
-
   if (formFactor === "desktop" || formFactor === "tablet" || formFactor === "tv" )
   {
     createTabs();

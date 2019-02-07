@@ -1,4 +1,4 @@
-/*
+/**!
       _                      _       __  __ _ _ _
      | | ___  ___  ___ _ __ | |__   |  \/  (_| | |___
   _  | |/ _ \/ __|/ _ | '_ \| '_ \  | |\/| | | | / __|
@@ -60,7 +60,7 @@ function first(obj) {
     return a;
 }
 function parseGists(d){
-console.log(d)
+if (DEFINE_DEBUG){ console.log(d)}
   for (var i = 0 ; i < d.length ; i ++){
     var tt =  first( d[i].files ) ;
   //  console.log(d[i].files[tt].filename)
@@ -101,7 +101,7 @@ function getProgramingIcon(lang){
 
 }
 function parseRepos(d){
-console.log(d.length)
+if (DEFINE_DEBUG){console.log(d.length)}
   for (var i = 0 ; i < d.length ; i ++){
     $("#gitTabRepos").append("\
         <div class='col-sm-6 col-md-4'>\

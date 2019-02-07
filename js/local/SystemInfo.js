@@ -54,6 +54,9 @@ function SystemInfo()
     this.iosVersion="null";
     this.windowsVersion="null";
 
+/*!
+    * returns a int for the version of osx 
+*/
 this.getOsxVersion = function()
 {
   var t = navigator.appVersion;
