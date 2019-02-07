@@ -45,42 +45,37 @@
 
 
 const version = 0.1;
-
-
-
-  const sections =  [ "About", "Resume", "Videos","Code" ];
-  var sectionZero = [ "Joseph Mills"];
+const sections =  [ "About", "Resume", "Videos","Code" ];
+var sectionZero = [ "Joseph Mills"];
 // "Contact"   var sectionOne =  [ "Stay In Touch", "Call Now" ];
-  var sectionOne =  [ "Experence", "Qualifactions", "Rating of skills" ];
-  var sectionTwo = [ "Programs","Tutorials" ]
-  var sectionThree = ["Github" ,"Launchpad","This Site" ]
+var sectionOne =  [ "Experence", "Qualifactions", "Rating of skills" ];
+var sectionTwo = [ "Programs","Tutorials" ]
+var sectionThree = ["Github" ,"Launchpad","This Site" ]
 
-  var vidLoad = 0;
+var vidLoad = 0;
+var eHistory = [];
+var forHistory = eHistory.concat(
+                                sectionZero,
+                                sectionOne,
+                                sectionTwo,
+                                sectionThree
+                                );
 
+m_history.setPages(forHistory)
+m_stackView.start(forHistory);
 
+var m_defaultPrimaryColor = "#2196F3"
+var m_defaultAccentColor = "#CDDC39"
 
-  var eHistory = [];
-  var forHistory = eHistory.concat(
-                                    sectionZero,
-                                    sectionOne,
-                                    sectionTwo,
-                                    sectionThree
-                                  );
-
-  m_history.setPages(forHistory)
-  m_stackView.start(forHistory);
-
-
-  const materialColors = [
-          "#F44336", "#E91E63", "#9C27B0", "#673AB7", "#3F51B5",
-          "#2196F3", "#03A9F4", "#00BCD4", "#009688", "#4CAF50",
-          "#8BC34A", "#CDDC39", "#FFEB3B", "#FFC107", "#FF9800",
-          "#FF5722", "#9E9E9E", "#607D8B", "#795548", "#000000",
-          "#FFFFFF"
-  ]
-  const materialColorArea = ["Primary Color","Accent Color", "Background Color"]
-
-  var menuOpen =  true
+const materialColors = [
+        "#F44336", "#E91E63", "#9C27B0", "#673AB7", "#3F51B5",
+        "#2196F3", "#03A9F4", "#00BCD4", "#009688", "#4CAF50",
+        "#8BC34A", "#CDDC39", "#FFEB3B", "#FFC107", "#FF9800",
+        "#FF5722", "#9E9E9E", "#607D8B", "#795548", "#000000",
+        "#FFFFFF"
+]
+const materialColorArea = ["Primary Color","Accent Color", "Background Color"];
+var menuOpen =  true;
 
 
 /*!
@@ -264,14 +259,32 @@ function checkColorCookie() {
   var cPrimaryColor = getColorCookie("primaryColor");
   var cAccentColor = getColorCookie("acceccentColor");
   var cBackgroundColor = getColorCookie("backgroundColor");
-  if (cPrimaryColor!="") {
+  
+  if (cPrimaryColor!="")
+  {
       setPrimaryColor(cPrimaryColor)
   }
-  if (cAccentColor!="") {
+  else
+  {
+      setPrimaryColor(m_defaultPrimaryColor)
+  }
+  
+  if (cAccentColor!="") 
+  {
       setAccentColor(cAccentColor)
   }
-  if (cBackgroundColor!="") {
+  else
+  {
+    setAccentColor(m_defaultAccentColor)
+  }
+  
+  if (cBackgroundColor!="") 
+  {
     setBackgroundColor(cBackgroundColor)
+  }
+  else
+  {
+    setBackgroundColor("#EEEEEE")
   }
 }
 
