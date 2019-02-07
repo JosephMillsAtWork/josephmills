@@ -194,6 +194,11 @@ function setPrimaryColor(c)
     $("#footerBackground").css("background-color", c);
     $("#footer").css("background-color", c);
     $(".nav-tabs").css( "background", c );
+    
+    $("#mobileMenu > #menuItemHeader").each( function(){
+        $(this).css("background-color", c);        
+    })
+    
     setColorCookie("primaryColor", c, 256)
 
 }
