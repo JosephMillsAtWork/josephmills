@@ -189,11 +189,20 @@ function setPrimaryColor(c)
   //   $(".btn-primary").css("background-color", c);
     $(".header-panel").css("background-color", c);
     $(".tab").css("background-color", c);
+    $(".tabBtn").css("background-color", c);
+    
     $(".active").css( "background-color", c);
     $("#loadingPage").css("background-color", c);
     $("#footerBackground").css("background-color", c);
     $("#footer").css("background-color", c);
     $(".nav-tabs").css( "background", c );
+    
+    $("#leftMenu > #menuItem" ).each(function(){
+        if( $(this).hasClass("active") )
+        {
+            $(this).css("background-color", c);
+        }
+    })
     
     $("#mobileMenu > #menuItemHeader").each( function(){
         $(this).css("background-color", c);        
@@ -360,7 +369,7 @@ function submenuColor( idx )
     $("#leftMenu > li").each(function(){
         if( idx == $(this).text() )
         {
-//             $(this).addClass("active");
+            $(this).addClass("active");
             $(this).css('background-color', getColorCookie("primaryColor" ) );
             $(this).css('color', 'white');
             $(this).css('font-weight', 'bold');
@@ -370,7 +379,7 @@ function submenuColor( idx )
             $(this).css('background-color', 'transparent');
             $(this).css('color', 'black');
             $(this).css('font-weight', 'normal');
-//             $(this).removeClass("active");
+            $(this).removeClass("active");
         }
         
     });

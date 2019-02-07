@@ -131,17 +131,17 @@ If you are reading this I am for hire.
        m_history.setBaseUrl("https://josephmillsatwork.github.io/josephmills");
    }
    m_history.checkforHash();
+
    var m_stackView = new StackView();
 
-
-  var initPage, formFactor;
-  formFactor = m_screen.formFactor();
+  var formFactor = m_screen.formFactor();
   
-  initPage = "App.html";
+  var initPage = "App.html";
   if( DEFINE_LOCALHOST )
   {
         initPage = "/josephmills/App.html";
   }
+  
   $("#root").load(initPage);
 
 
