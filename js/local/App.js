@@ -13,7 +13,7 @@
 
  If you are reading this I am for hire.
 
- Copyright (C) 2016 Joseph Mills
+ Copyright (C) 2017 Joseph Mills
  Contact: josephjamesmills@gmail.com
 
  This file is part of Joseph Mills portfolio site
@@ -48,7 +48,7 @@ const version = 0.1;
 const sections =  [ "About", "Resume", "Videos","Code" ];
 var sectionZero = [ "Joseph Mills"];
 // "Contact"   var sectionOne =  [ "Stay In Touch", "Call Now" ];
-var sectionOne =  [ "Experence", "Qualifactions", "Rating of skills" ];
+var sectionOne =  [ "Experience", "Qualifications", "Rating of skills" ];
 var sectionTwo = [ "Programs","Tutorials" ]
 var sectionThree = ["Github" ,"Launchpad","This Site" ]
 
