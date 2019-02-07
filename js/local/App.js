@@ -1,4 +1,4 @@
-/*
+/**!
       _                      _       __  __ _ _ _
      | | ___  ___  ___ _ __ | |__   |  \/  (_| | |___
   _  | |/ _ \/ __|/ _ | '_ \| '_ \  | |\/| | | | / __|
@@ -129,7 +129,6 @@ function parseMenuCall(menuArray){
       }
   }
 
-  //changePage(menuArray[0])
 }
 
 
@@ -139,14 +138,12 @@ function parseMenuCall(menuArray){
 function changePage(pageName)
 {
   var newPage = pageName.toString()
-
-  m_stackView.changePage(pageName);
-
-
-  //$("#page").load( "pages/" + newPage.replace(/\s/g, "").toLowerCase() +".html" );
-  $("#pageTitle").text(pageName);
-  $("#navDrawer").css("height", $("#mainRow").height() )
+  m_stackView.changePage( pageName );
+  $("#pageTitle").text( pageName );
+  $("#navDrawer").css( "height", $("#mainRow").height() )
   window.location.hash = pageName;
+  submenuColor( newPage )
+
 }
 
 
@@ -185,7 +182,6 @@ function createTabs(){
   for (var i =0;i < sections.length ; i++){
     $( '#sectionTabs' ).append("<li class='tab'> <a class='tabBtn' id='section" + i + "'>" + sections[i]+ "</a></li>");
   }
-
 }
 
 
@@ -198,7 +194,11 @@ function setPrimaryColor(c)
   //   $(".btn-primary").css("background-color", c);
     $(".header-panel").css("background-color", c);
     $(".tab").css("background-color", c);
-//     $(".menu ul li.active").css("background-color", c);
+    $(".active").css( "background-color", c);
+    $("#loadingPage").css("background-color", c);
+    $("#footerBackground").css("background-color", c);
+    $("#footer").css("background-color", c);
+    $(".nav-tabs").css( "background", c );
     setColorCookie("primaryColor", c, 256)
 
 }
@@ -209,7 +209,8 @@ function setPrimaryColor(c)
 function setAccentColor(c)
 {
     $(".indicator").css("background-color", c);
-    setColorCookie("acceccentColor", c, 256)
+    $("#footerTopbar").css("background-color", c);
+    setColorCookie("acceccentColor", c, 256);
 }
 
 /*!
@@ -326,9 +327,37 @@ function loadedEverything()
 {
   var ae = m_history.hashStr();
   changePage( ae )
+  $("#footerTopbar").css("background-color", getColorCookie("acceccentColor" ) );
+
   $("#loadingPage").slideUp("slow");
-//   $("#loadingPage").remove();
+  
 }
+
+/*!
+ * Setup our submenu colors we use the text to see if we are active. 
+ * 
+ */
+function submenuColor( idx )
+{
+    $("#leftMenu > li").each(function(){
+        if( idx == $(this).text() )
+        {
+//             $(this).addClass("active");
+            $(this).css('background-color', getColorCookie("primaryColor" ) );
+            $(this).css('color', 'white');
+            $(this).css('font-weight', 'bold');
+        }
+        else
+        {
+            $(this).css('background-color', 'transparent');
+            $(this).css('color', 'black');
+            $(this).css('font-weight', 'normal');
+//             $(this).removeClass("active");
+        }
+        
+    });
+}
+
 
 
 
@@ -347,13 +376,7 @@ $(document).ready( function(){
 
   loadFooter();
 
-
-
-
-
-
-
-  if (formFactor === "desktop" || formFactor === "tablet")
+  if (formFactor === "desktop" || formFactor === "tablet" || formFactor === "tv" )
   {
     createTabs();
 
@@ -364,7 +387,7 @@ $(document).ready( function(){
       var sectionCount,sectionActive, sectionFocus;
 
       // ok this is a refresh on a page. and not the starting point
-//       so lets check the arrays and make sure that we parse the right one
+      // so lets check the arrays and make sure that we parse the right one
       if ( sectionZero.includes( m_history.hashStr() ) )
       {
         parseMenuCall(sectionZero);
@@ -470,8 +493,6 @@ $(document).ready( function(){
   setUpColorOptions();
   checkColorCookie();
 
-
-
   var colorFocus = 0
   $( "#colorAreaType , option:selected" ).change(function() {
     $( "select option:selected" ).each(function() {
@@ -529,22 +550,19 @@ $(document).ready( function(){
  * The Menu on the left is clicked so we setup the new page
  * also change the pageTitle
  */
- $( "#leftMenu" ).on('click','#menuItem', function()
+ $("#leftMenu").on('click','#menuItem', function()
   {
     if (DEFINE_DEBUG){
       console.log( $(this).text() )
     }
-
-    $("#leftMenu").each(function(){
-      $("li").removeClass("active");
-    });
-
-    $(this).addClass("active");
-
     changePage( $(this).text() )
   });
 
 
+ 
+ 
+ 
+ 
 /*!
  * open and close the left menu
 */

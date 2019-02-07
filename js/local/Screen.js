@@ -124,12 +124,12 @@ var setFormFactor = function()
       m_formFactor = "tablet";
       isDesktop = false;
     }
-    else if (m_displaySize > 16 && m_displaySize < 25)
+    else if (m_displaySize > 16 && m_displaySize < 30)
     {
       m_formFactor = "desktop";
       isDesktop = true;
     }
-    else if (m_displaySize > 25 )
+    else if (m_displaySize > 30 )
     {
       m_formFactor  = "tv";
       isDesktop = false;

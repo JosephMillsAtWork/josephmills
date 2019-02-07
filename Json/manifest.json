@@ -1,0 +1,19 @@
+{
+  "short_name": "Joseph Mills",
+  "name": "Joseph's Protfolio",
+  "icons": [
+  {
+    "src": "/josephmills/artwork/joseph.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  },
+  {
+    "src": "/josephmills/artwork/joseph.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }
+  ],
+  "start_url": "/",
+  "background_color": "#EEEEEE",
+  "display": "standalone"
+}

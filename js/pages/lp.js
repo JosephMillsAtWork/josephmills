@@ -95,7 +95,7 @@ function parseBranches(d){
 
 function getLPJson(){
     $.ajax({
-    url: "https://josephmillsatwork.github.io/josephmills/Json/Launchpad.json",
+    url: "/josephmills/Json/Launchpad.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)

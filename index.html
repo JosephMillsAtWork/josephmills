@@ -49,6 +49,8 @@ If you are reading this I am for hire.
   <meta name="keywords" content="joseph mills" />
   <meta name="author" content="Joseph Mills" />
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="manifest" href="/josephmills/Json/manifest.json">
+
   <title>Joseph's Portfolio'</title>
 
   <!--
@@ -111,6 +113,7 @@ If you are reading this I am for hire.
 
   <script>
   const DEFINE_DEBUG = false;
+  const DEFINE_LOCALHOST = false;
 
    $.material.ripples();
    $.material.init();
@@ -119,17 +122,26 @@ If you are reading this I am for hire.
    m_screen.start();
 
    var m_history = new History();
-   m_history.setBaseUrl("https://josephmillsatwork.github.io/josephmills");
+   if( DEFINE_LOCALHOST )
+   {
+       m_history.setBaseUrl("127.0.0.1/josephmills");
+   }
+   else
+   {
+       m_history.setBaseUrl("https://josephmillsatwork.github.io/josephmills");
+   }
    m_history.checkforHash();
    var m_stackView = new StackView();
 
 
-
-
   var initPage, formFactor;
   formFactor = m_screen.formFactor();
+  
   initPage = "App.html";
-
+  if( DEFINE_LOCALHOST )
+  {
+        initPage = "/josephmills/App.html";
+  }
   $("#root").load(initPage);
 
 

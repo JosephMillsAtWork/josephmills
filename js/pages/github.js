@@ -47,7 +47,7 @@ function parseLevelOne(d){
 
 function getLevelOne(){
   $.ajax({
-    url: "https://josephmillsatwork.github.io/josephmills/Json/ghHome.json",
+    url: "/josephmills/Json/ghHome.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)
@@ -81,7 +81,7 @@ console.log(d)
 }
 function getGists(){
   $.ajax({
-    url: "https://josephmillsatwork.github.io/josephmills/Json/ghGists.json",
+    url: "/josephmills/Json/ghGists.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)
@@ -121,7 +121,7 @@ console.log(d.length)
 
 function getRepos(){
   $.ajax({
-    url: "https://josephmillsatwork.github.io/josephmills/Json/ghRepo.json",
+    url: "/josephmills/Json/ghRepo.json",
     }).done(function(data) {
         var item = JSON.stringify(data)
         var list = JSON.parse(item)
