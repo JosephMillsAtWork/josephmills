@@ -510,8 +510,8 @@ $(document).ready( function(){
     $("#sectionTabs").hide(0)
     $(".mobile-close").hide(0)
     $(".mobile-menu").hide(0)
-
-    changePage(sectionZero[0])
+    parseMenuCall(sectionZero);
+    changePage( sectionZero[0] )
 
   }
 
