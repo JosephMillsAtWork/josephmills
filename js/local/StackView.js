@@ -1,4 +1,4 @@
-/*
+/**!
       _                      _       __  __ _ _ _
      | | ___  ___  ___ _ __ | |__   |  \/  (_| | |___
   _  | |/ _ \/ __|/ _ | '_ \| '_ \  | |\/| | | | / __|
@@ -78,7 +78,8 @@ var init = function()
 
 var findAt = function(str)
 {
-  return pageList.indexOf(str);
+  var dc = decodeURIComponent(str);  
+  return pageList.indexOf(dc);
 }
 
 

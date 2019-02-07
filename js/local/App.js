@@ -410,7 +410,7 @@ $(document).ready( function(){
     if ( m_history.hasHash() )
     {
 
-      var cPage =  m_history.hashStr()
+      var cPage = m_history.hashStr()
       var sectionCount,sectionActive, sectionFocus;
 
       // ok this is a refresh on a page. and not the starting point
@@ -510,7 +510,7 @@ $(document).ready( function(){
     $("#sectionTabs").hide(0)
     $(".mobile-close").hide(0)
     $(".mobile-menu").hide(0)
-    //parseMenuCall(sectionZero);
+    parseMenuCall(sectionZero);
     changePage( sectionZero[0] )
 
   }

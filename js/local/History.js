@@ -97,7 +97,7 @@ this.setLoader = function()
 this.hashStr = function()
 {
   getHash()
-  return currentHash;
+  return decodeURIComponent( currentHash );
 }
 
 
