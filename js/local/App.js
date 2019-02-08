@@ -190,6 +190,8 @@ function setPrimaryColor(c)
     $("#footer").css("background-color", c);
     $(".nav-tabs").css( "background", c );
     
+
+    
     $("#leftMenu > #menuItem" ).each(function(){
         if( $(this).hasClass("active") )
         {
